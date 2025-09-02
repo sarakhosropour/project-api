@@ -5,7 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npx tsx src/index.ts"
+    "clean": "npx rimraf dist",
+    "clean:production": "npx rimraf build",
+    "build:production": "npm run clean:production && tsc --build ./production.tsconfig.json && cp .env build/.env && cp -r src/templates build/src",
+    "dev": "nodemon --watch './**/*.ts' --exec \"node --experimental-specifier-resolution=node --loader ts-node/esm\" src/index.ts",
+    "start": "npx tsx src/index.ts",
+    "start:production": "node --experimental-specifier-resolution=node --loader ts-node/esm build/src/index.js",
+    "test": "vitest --no-file-parallelism",
+    "coverage": "vitest run --coverage --no-file-parallelism"
   },
   "keywords": [],
   "author": "",
