@@ -1,0 +1,23 @@
+{
+  "name": "project-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@sarakhosropour/framework-api": "^1.0.2",
+    "tsx": "^4.20.4",
+    "vite": "^7.1.3"
+  }
+}
